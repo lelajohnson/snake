@@ -30,7 +30,7 @@ function setup() {
 
 function classifyVideo() {
   flipVideo = ml5.flipImage(video);
-  classifier.classify(video, gotResults);
+  classifier.classify(flipVideo, gotResults);
 }
 
 function foodLocation() {
