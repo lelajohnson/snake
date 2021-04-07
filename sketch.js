@@ -65,10 +65,6 @@ function controlSnake() {
 function draw() {
   scale(rez);
   background(220);
-  image(flipVideo, 0, 0);
-  textSize(32);
-  fill(255);
-  text(label, 10, 50);
 
   if (snake.eat(food)) {
     foodLocation();
@@ -85,4 +81,9 @@ function draw() {
   noStroke();
   fill(255, 0, 0);
   rect(food.x, food.y, 1, 1);
+
+  image(flipVideo, 0, 0);
+  textSize(32);
+  fill(255);
+  text(label, 10, 50);
 }
