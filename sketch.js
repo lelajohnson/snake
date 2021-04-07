@@ -18,6 +18,7 @@ function setup() {
 
   video = createCapture(VIDEO);
   video.hide();
+  video.size(640, 480);
   flipVideo = ml5.flipImage(video);
 
   classifyVideo();
