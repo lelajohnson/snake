@@ -1,4 +1,3 @@
-
 let label = "waiting...";
 let flipVideo;
 let classifier;
@@ -8,7 +7,7 @@ function preload() {
   classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/cUS5BRG6f/' + 'model.json');
 }
 let snake;
-let rez = 1;
+let rez = 20;
 let food;
 let w;
 let h;
@@ -60,12 +59,18 @@ function controlSnake() {
   } else if (label === 'Up') {
     snake.setDir(0, -1);
   }
+
 }
 
 function draw() {
-  scale(rez);
-  background(220);
 
+  background(220);
+  image(flipVideo, 0, 0);
+  textSize(32);
+  fill(255);
+  text(label, 10, 50);
+
+  scale(rez);
   if (snake.eat(food)) {
     foodLocation();
   }
@@ -81,9 +86,4 @@ function draw() {
   noStroke();
   fill(255, 0, 0);
   rect(food.x, food.y, 1, 1);
-
-  image(flipVideo, 0, 0);
-  textSize(32);
-  fill(255);
-  text(label, 10, 50);
 }
